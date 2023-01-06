@@ -17,7 +17,7 @@ Projeto desenvolvido para o aprendizado. Ele consiste em reproduzir o jogo da ve
 
 <p align="center">
   <img 
-       src="" 
+       src="https://raw.githubusercontent.com/Polaris851/Jogo-da-Velha/main/jogodavelha.gif" 
        alt="demonstração"/>
 </p>
 
