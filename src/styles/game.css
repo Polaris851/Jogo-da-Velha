@@ -1,0 +1,156 @@
+.container {
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(135deg, rgba(104, 166, 148, 0.5),rgba(69, 115, 102, 0.5));
+    color: #284039;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    padding: 12px;
+    font-weight: 600;
+    color: #457366;
+}
+
+button {
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: #284039;
+    color: #fff;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    border: 0;
+
+    transition: filter 0.2s;
+}
+
+p {
+    padding: 10px;
+    font-weight: 500;
+}
+
+.board {
+    height: 60%;
+    width: 100%;
+    
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+
+    border: 2px solid #284039;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+
+    cursor: pointer;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+    border-left: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+    border-right: none;
+}
+
+/*JOGADOR X*/
+.X::before,
+.X::after,
+.X .cell:not(.X):not(.O):hover::after,
+.X .cell:not(.X):not(.O):hover::before {
+    content: "";
+    position: absolute;
+
+    height: calc(60px * 0.15);
+    width: calc(60px * 0.9);
+    width: 0px;
+
+    background: #68A694;
+
+    animation-name: growX;
+    animation-duration: .2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    
+    cursor: not-allowed;
+}
+
+.X::before,
+.X .cell:not(.X):not(.O):hover::before {
+    transform: rotate(45deg);
+}
+
+.X::after, 
+.X .cell:not(.X):not(.O):hover::after {
+    transform: rotate(-45deg);
+}
+
+.X::after {
+   animation-delay: .2s; 
+}
+
+@keyframes growX {
+    from {
+        width: 0px;
+    } to {
+        width: 50px;
+    }
+}
+
+/*JOGADOR O*/
+.O::before,
+.O::after, 
+.O .cell:not(.X):not(.O):hover::before,
+.O .cell:not(.X):not(.O):hover::after {
+    content: "";
+
+    height: calc(60px * 0.6);
+    width: calc(60px * 0.6);
+
+    background: transparent;
+    border-radius: 50%;
+    border: 10px solid #457366;
+
+    position: absolute;
+
+    cursor: not-allowed;
+}

@@ -1,0 +1,53 @@
+:root {
+    --line-width: 300%;
+}
+
+.victoryLine {
+    width: 0px;
+    height: 10px;
+    background-color: #222;
+    animation: growLine .5s ease-in-out forwards;
+    position: absolute;
+    transform-origin: left;
+    z-index: 999;
+}
+
+@keyframes growLine {
+    from {
+        width: 0px;
+    } to {
+        width: var(--line-width);
+    }
+}
+
+.horizontal {
+    rotate: 0deg;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    --line-width: 300%;
+}
+
+.vertical {
+    rotate: 90deg;
+    top: 0;
+    left: 50%;
+    transform: translateZ(-50%);
+    --line-width: 300%;
+}
+
+.diagonalToRight {
+    rotate: 45deg;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    --line-width: 424%;
+}
+
+.diagonalToLeft {
+    rotate: 135deg;
+    top: 0;
+    left: 100%;
+    transform: translateY(50%);
+    --line-width: 424%;
+}
