@@ -33,7 +33,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-$ git clone https://github.com/Polaris851/Jogo-da-Velha
+$ git clone https://github.com/Polaris851/Jogo-da-Velha.git
 $ cd Jogo-da-Velha
 ```
 
